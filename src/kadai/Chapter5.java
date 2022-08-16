@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Chapter5 {
 	public static void main(String[] args) {
-		
+
 		List<String> list = new ArrayList<>();
 		list.add("2021-10-21" + " 牛乳を買う");
 		list.add("2021-09-15" + " ○○社面談");
