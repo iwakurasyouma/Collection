@@ -1,21 +1,27 @@
 package kadai;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Chapter5 {
 	public static void main(String[] args) {
-
-		List<String> list = new ArrayList<>();
-		list.add("2021-10-21" + " 牛乳を買う");
-		list.add("2021-09-15" + " ○○社面談");
-		list.add("2021-12-04" + " 手帳を買う");
-		list.add("2021-08-10" + " 散髪に行く");
-		list.add("2021-11-09" + " スクールの課題を解く");
-		Collections.sort(list);
-		for (String s : list) {
-			System.out.println(s);
+	
+		List<Task> list1 = new ArrayList<>();
+				Task task1 = new Task(LocalDate.of(2021,10,21),"牛乳を買う");
+				list1.add(task1);
+				Task task2 = new Task(LocalDate.of(2021,9,15),"○○社面談");
+				list1.add(task2);
+				Task task3 = new Task(LocalDate.of(2021,12,4),"手帳を買う");
+				list1.add(task3);
+				Task task4 = new Task(LocalDate.of(2021,8,10)," 散髪に行く");
+				list1.add(task4);
+				Task task5 = new Task(LocalDate.of(2021,11,9),"スクールの課題を解く");
+				list1.add(task5);
+				
+				list1.sort((a,b)->a.getDate().compareTo(b.getDate()));
+				for(Task t : list1) {
+					System.out.println(t.getDate()+" "+t.getTask());
+				}
 		}
-	}
 }
